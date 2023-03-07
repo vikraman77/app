@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikram's Portfolio Website</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'myapp:home' %}" class="logo hvr-underline-from-center">Portfolio</a>
+        <div>
+            <nav class="navbar">
+                <a href="{% url 'myapp:home' %}" style="--i:1;" class="active hvr-float-shadow">Home</a>
+                <a href="{% url 'myapp:about' %}" style="--i:2;" class="hvr-float-shadow">About</a>
+                <a href="{% url 'myapp:skill' %}" style="--i:3;" class="hvr-float-shadow">Skills</a>
+                <a href="{% url 'myapp:contact' %}" style="--i:4;" class="hvr-float-shadow">Contact</a>
+                
+            </nav>
+        </div>
+        <div class="menu0">
+            <input type="checkbox" id="check0">
+            <label for="check0" class="button0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class='nav0'>
+                <a href="{% url 'myapp:about' %}">About</a>
+                <a href="{% url 'myapp:skill' %}">Skills</a>
+                <a href="{% url 'myapp:contact' %}">Contact</a>
+            </nav>
+        </div>
+
+    </header>
+  
+    
+
+    <section class="home">
+        <div class="home-content">
+            
+            <h3>Hello, It's Me</h3>
+            <h1>Vikraman</h1>
+            <h3>& I'm a <span class="multiple-text"></span></h3>
+            
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/vikraman-m-4067b5252" style="--i:7;"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/romanviki_nbd/" style="--i:8;"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/ROMANVIKI" style="--i:9;"><i class='bx bxl-github' ></i></a>
+                <a href="https://discord.gg/nN4kgQAa" style="--i:10;"><i class='bx bxl-discord-alt' ></i></a>
+            </div>
+            <a href="{% url 'myapp:download_pdf' %}" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="{% static 'pic(2).png' %}" alt="">
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

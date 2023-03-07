@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Skills</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'skill.css' %}">
+    <!-- <script src="skil.js"></script> -->
+    <style>
+        body {
+            background-image: url("{% static 'astronaut.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="topic hvr-underline-from-center"><a href="#">Skills</a></div>
+            <ul class="link">
+                <li><a href="{% url 'myapp:home' %}" class="hvr-float-shadow home-link">Home</a></li>
+                <li><a href="{% url 'myapp:about' %}" class="hvr-float-shadow about-link">About</a></li>
+                <li><a href="{% url 'myapp:skill' %}" class="hvr-float-shadow skills-link">Skills</a></li>
+                <li><a href="{% url 'myapp:contact' %}" class="hvr-float-shadow contact-link">Contact</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <script>
+        const toggleButton = document.querySelector('.toggle-button')
+        const toggleButtonIcon = document.querySelector('.toggle-button i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+
+        toggleButton.onclick = function() {
+            dropDownMenu.classList.toggle('open')
+        }
+    </script>
+
+
+
+    <div class="skills">  
+        
+        <li>
+            <h3>Python</h3><span class="bar"><span class="html"></span></span> 
+        </li>
+    
+        <li>
+            <h3>HTML</h3><span class="bar"><span class="css"></span></span>
+        </li>
+    
+        <li>
+            <h3>CSS</h3><span class="bar"><span class="javascript"></span></span>
+        </li>
+    
+        <li>
+            <h3>Django, Flask</h3><span class="bar"><span class="jquery"></span></span>
+        </li>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+body {
+    position: static;
+    background: #191825;
+    color: #fff;
+    overflow: hidden;
+}
+.popup {
+    display: none;
+}
+                                                                  
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    
+    color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+.menu0{
+    display: none;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}
+/* I hide the checkbox because I only need the label */
+#check0{
+    display: none;
+}
+
+.button0{
+    width: 48px;
+    height: 48px;
+    
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 8px;
+    line-height: 8px;
+    text-align: left;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 201;
+}
+
+.button0 span{
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62,.43,.35,1.47);
+}
+
+
+/* toggle icon animation */
+#check0:checked ~ .button span:nth-child(1){
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+#check:checked ~ .button span:nth-child(2){
+    width: 0;
+}
+
+#check0:checked ~ .button span:nth-child(3){
+    width: 100%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+
+/* the nav height is set to 0 when the navbar is closed */
+
+.nav0{
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    height: 0;
+}
+.nav0 a{
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22,.43,.35,1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    text-align: center;
+    border-bottom: 1px solid #b4ac97;
+}
+
+.nav0 a:hover{
+    background: #ffdd7f;
+}
+
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check0:checked ~ nav{
+    height: 144px;
+}
+
+#check0:checked ~ nav a{
+    padding: 10px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* you can edit the direction where the slide starts, changing the height animation to width, but it will take some changes.
+for example:
+
+nav{
+    width: 0%;
+    background: #ffffff;
+    height: auto;
+    max-height 144px;
+    opacity: 0;
+}
+
+#check:checked ~ nav{
+    width: 100%;
+    opacity: 1;
+} 
+
+*/
+
+
+
+
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3 span {
+    color: aqua;
+}
+
+.home-content {
+    max-width: 600px;
+    margin-right: 0;
+    padding-bottom: 70px;
+}
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.home-img img {
+    position: relative;
+    right: 0;
+    max-width: 700px;
+    
+    transform: translateX(-50%);
+    padding-left: 0;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.social-media  a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid aqua;
+    border-radius: 50%;
+    font-size: 20px;
+    color: aqua;
+    text-decoration: none;
+    margin: 30px 15px 20px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background: aqua;
+    color: #1f242d;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Moon Animation */
+
+.hvr-float-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .hvr-float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+  }
+  .hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+  }
+  .hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+  }
+  
+
+
+  .hvr-underline-from-center {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  .hvr-underline-from-center:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: #2098D1;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+    left: 0;
+    right: 0;
+  }
+
+  @media (max-width: 992px) {
+    body {
+        overflow: hidden;
+    }
+    .home-img{
+        display: none;
+    }
+    .home {
+        padding-top: 1rem;
+    }
+
+    .home-content {
+        padding-bottom: 12rem;
+    }
+
+    .header .navbar {
+        display: none;
+    }
+    .header .fk-navbar {
+        display: block;
+    }
+
+
+
+
+ 
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    /* CSS rules go here */
+    .menu0 {
+        display: block;
+    }
+    .button0 {
+        padding-bottom: 0;
+        padding-top: 20px;
+    }
+  }
+  

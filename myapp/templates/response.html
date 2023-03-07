@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'response.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'response-img.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+
+    <div class="response">
+        
+        <h2>Thank You for the Response😀. </h2><br>
+        <h3>Click the home button to redirect to the home page.</h3>  
+
+    </div><br> <br>
+    <div>
+        <a href="{% url 'myapp:home' %}">
+            <button class="cybr-btn">
+                HOME<span aria-hidden>_</span>
+                <span aria-hidden class="cybr-btn__glitch">ROMANVIKI_</span>
+                <span aria-hidden class="cybr-btn__tag">RV</span>
+            </button>
+        </a>
+    </div>
+    
+</body>
+</html>
